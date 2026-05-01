@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ide__getDiagnostics",
+      "Bash(openssl rand *)",
+      "Bash(vercel --version)",
+      "Bash(vercel whoami *)",
+      "Bash(pnpm install *)",
+      "Bash(vercel link *)",
+      "Bash(vercel env *)",
+      "Bash(vercel deploy *)",
+      "Bash(curl -s -o /tmp/root.txt -w \"HTTP %{http_code}\\\\n\" https://flowin-recieve-iot.vercel.app/)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /tmp/c1.txt -w \"HTTP %{http_code}\\\\n\" https://flowin-recieve-iot.vercel.app/api/cron/migrate)",
+      "Bash(curl -s -o /tmp/c2.txt -w \"HTTP %{http_code}\\\\n\" -H \"Authorization: Bearer e88f580666fe6a3358abbbaf0f9574141ead8a000a700986ac8f56b78e99f531\" https://flowin-recieve-iot.vercel.app/api/cron/migrate)",
+      "Bash(curl -s -o /tmp/i1.txt -w \"HTTP %{http_code}\\\\n\" -X POST https://flowin-recieve-iot.vercel.app/iot/test-user/test-meter -H \"Content-Type: application/json\" -d '{\"usedWater\":0.12}')"
+    ]
+  }
+}
