@@ -10,12 +10,10 @@ class MeterController {
       const nomorMeteran = req.query.number as string;
 
       if (!nomorMeteran) {
-        res
-          .status(400)
-          .json({
-            status: 400,
-            message: "Query parameter 'number' wajib diisi",
-          });
+        res.status(400).json({
+          status: 400,
+          message: "Query parameter 'number' wajib diisi",
+        });
         return;
       }
 
@@ -31,7 +29,7 @@ class MeterController {
 
       const meter = await db
         .collection("meters")
-        .findOne({ NomorMeteran: nomorMeteran });
+        .findOne({ NomorMeteran: nomorMeteran }, { projection: { _id: 1 } });
 
       if (!meter) {
         res
