@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import iotRouter from "./routes/IotRouter";
 import cronRouter from "./routes/CronRouter";
+import meterRouter from "./routes/MeterRouter";
 
 class App {
   public app: Application;
@@ -18,6 +19,7 @@ class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use("/iot", iotRouter);
     this.app.use("/api/cron", cronRouter);
+    this.app.use("/api", meterRouter);
   }
 
   private routes(): void {
